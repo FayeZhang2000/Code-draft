@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="test.css" />
+    <script src="test.js"></script>
+    <title>Test</title>
+  </head>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <main class="dashboard-layout">
+    <!-- 1st row-->
+
+    <div class="grid-item active-customer">
+      <div class="maintext">
+        <div class="customer-info">
+          <span class="title">Total Active Customers</span>
+          <span class="growth"
+            >+40% <span class="subtext">vs last month</span></span
+          >
+        </div>
+        <div class="customer-stat">
+          <span class="stat-number">200,234</span>
+        </div>
+      </div>
+      <img src="/images/goUp.png" alt="Growth Icon" class="growth-icon" />
+    </div>
+
+    <div class="grid-item postpaid-customer">
+      <div class="maintext">
+        <div class="customer-info">
+          <span class="title">Total Postpaid Customers</span>
+          <span class="growth"
+            >+20% <span class="subtext">vs last month</span></span
+          >
+        </div>
+        <div class="customer-stat">
+          <span class="stat-number">100,234</span>
+        </div>
+      </div>
+      <img src="/images/goUp.png" alt="Growth Icon" class="growth-icon" />
+    </div>
+
+    <div class="grid-item prepaid-customer">
+      <div class="maintext">
+        <div class="customer-info">
+          <span class="title">Total Prepaid Customers</span>
+          <span class="decline"
+            >-2% <span class="subtext">vs last month</span></span
+          >
+        </div>
+        <div class="customer-stat">
+          <span class="stat-number">100,000</span>
+        </div>
+      </div>
+      <img src="/images/goDown.png" alt="Decline Icon" class="decline-icon" />
+    </div>
+
+    <!-- 2nd row-->
+
+    <div class="grid-item available-cards">
+      <div class="maintext">
+        <span class="title">Available Cards</span>
+        <div class="simInventory-container">
+          <div class="eSIM">
+            <div class="SIM-container">
+              <i class="bi bi-cpu"></i>
+              <span class="text">eSIM</span>
+            </div>
+            <span class="SIM-number">5,500</span>
+          </div>
+          <div class="SIM">
+            <div class="SIM-container">
+              <i class="bi bi-sim"></i>
+              <span class="text">SIM</span>
+            </div>
+            <span class="SIM-number">4,500</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item available-numbers">
+      <div class="maintext">
+        <div class="customer-info">
+          <div class="top-row">
+            <span class="title">Avaliable phone numbers</span>
+            <div class="dropdown-list">
+              <select>
+                <option>All Province</option>
+                <option>Alberta</option>
+                <option>British Columbia</option>
+                <option>Manitoba</option>
+              </select>
+            </div>
+          </div>
+          <span class="subtext">By province</span>
+        </div>
+        <div class="customer-stat">
+          <span class="stat-number">10,000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item item-6">
+      <img src="/images/Chart6.png" alt="Chart6" class="Chart" />
+    </div>
+
+    <!-- 3rd row-->
+    <div class="grid-item item-7">
+      <canvas id="activityChart" width="400" height="200"></canvas>
+    </div>
+
+    <div class="grid-item item-8">
+      <img src="/images/Chart8.png" alt="Chart8" class="Chart" />
+    </div>
+  </main>
+</html>
