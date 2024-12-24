@@ -352,3 +352,89 @@
   align-items: center;
   justify-content: center;
 }
+/* table  */
+.tabs-container {
+  border-right: 1px solid blue;
+  height: 100vh;
+  padding: 1%;
+  margin-bottom: 10px;
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable;
+}
+
+.tabs-content {
+  display: flex;
+  flex-direction: row;
+  /*    justify-content: space-around;*/
+  border-bottom: 1px solid blue;
+}
+
+.tab-item {
+  text-align: center;
+  padding: 1%;
+  font-size: 0.65rem;
+  color: blue;
+  cursor: pointer;
+}
+
+.tab-item.active {
+  color: var(--Primary);
+  border-bottom: 2px solid blue;
+}
+
+.tab-item:hover {
+  color: blue;
+  border-bottom: 2px solid blue;
+}
+
+/* tables */
+.tables-container {
+  margin-bottom: 50px;
+}
+
+.table-section {
+  padding-top: 10px;
+}
+
+.table-title {
+  font-size: 0.8rem;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: separate;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  border-spacing: 0;
+  font-size: 0.65rem;
+  text-align: left;
+  overflow-x: auto;
+}
+
+.styled-table thead tr {
+  white-space: nowrap;
+  background-color: #e3f2fd;
+  color: #2887e7;
+  font-weight: bold;
+  border: none;
+  padding: 6px 16px;
+}
+
+.styled-table th {
+  padding: 10px;
+}
+
+.styled-table td {
+  padding: 10px;
+  border-bottom: 1px solid greenyellow;
+}
+
+.styled-table tbody tr:hover {
+  background-color: grey;
+}
+
+.styled-table input[type="checkbox"] {
+  border: 1px solid green;
+  margin: 0 auto;
+  cursor: pointer;
+}

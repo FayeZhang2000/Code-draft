@@ -62,100 +62,126 @@
       <div class="banner">
         <!-- UP chart left -->
         <div class="left-chart">
-          <canvas id="activityChart"></canvas>
+          <canvas id="summaryChart"></canvas>
         </div>
         <!-- UP chart right -->
         <div class="right-chart">
           <div class="chart-container">
-            <canvas id="plansChart"></canvas>
+            <canvas id="SimStatusChart"></canvas>
           </div>
         </div>
       </div>
 
-      <div class="content">
-        <div class="table-section">
-          <p class="table-title">Survey Details</p>
-          <table class="styled-table">
-            <thead>
-              <tr>
-                <th><input type="checkbox" /></th>
-                <th>Branch</th>
-                <th>Carrier</th>
-                <th>Agent</th>
-                <th>Staff</th>
-                <th>Act.Date</th>
-                <th>Client #</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>1001</td>
-                <td>John hang</td>
-                <td>
-                  <div class="satisfaction-level5">5</div>
-                </td>
-                <td>Excellent service!</td>
-                <td>2024-01-01</td>
-                <td>2024-01-01</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>1002</td>
-                <td>John hang</td>
-                <td>
-                  <div class="satisfaction-level5">5</div>
-                </td>
-                <td>Good experience.</td>
-                <td>2024-01-02</td>
-                <td>2024-01-02</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>1002</td>
-                <td>John hang</td>
-                <td>
-                  <div class="satisfaction-level1">1</div>
-                </td>
-                <td>Good experience.</td>
-                <td>2024-01-02</td>
-                <td>2024-01-02</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>1002</td>
-                <td>John hang</td>
-                <td>
-                  <div class="satisfaction-level3">3</div>
-                </td>
-                <td>Good experience.</td>
-                <td>2024-01-02</td>
-                <td>2024-01-02</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>1002</td>
-                <td>John hang</td>
-                <td>
-                  <div class="satisfaction-level5">5</div>
-                </td>
-                <td>Good experience.</td>
-                <td>2024-01-02</td>
-                <td>2024-01-02</td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" /></td>
-                <td>1002</td>
-                <td>John hang</td>
-                <td>
-                  <div class="satisfaction-level4">4</div>
-                </td>
-                <td>Good experience.</td>
-                <td>2024-01-02</td>
-                <td>2024-01-02</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="tabs-container">
+        <div class="tabs-content">
+          <div
+            class="tab-item active"
+            data-tab="activation"
+            onclick="showTab('activation')"
+          >
+            Activation
+          </div>
+          <div
+            class="tab-item"
+            data-tab="termination"
+            onclick="showTab('termination')"
+          >
+            Terminations
+          </div>
+        </div>
+        <!-- Tab Content -->
+        <div class="tables-container">
+          <!-- Activation Table -->
+          <div class="table-section" id="activation" style="display: block">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Branch</th>
+                  <th>Carrier</th>
+                  <th>Agent</th>
+                  <th>Staff</th>
+                  <th>Act.Date</th>
+                  <th>Client #</th>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Plan</th>
+                  <th>Email</th>
+                  <th>CEM</th>
+                  <th>Activation Submitted Time</th>
+                  <th>Payment Time</th>
+                  <th>Activated Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>prepaid</td>
+                  <td>Lorem</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>2024-10-10</td>
+                  <td>12345</td>
+                  <td>Lorem</td>
+                  <td>778-738-1128</td>
+                  <td>Employeeplan</td>
+                  <td>Lorem</td>
+                  <td>Lorem</td>
+                  <td>2024-10-10</td>
+                  <td>Lorem</td>
+                  <td>2024-10-10</td>
+                </tr>
+                <tr>
+                  <td>prepaid</td>
+                  <td>Lorem</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>2024-10-10</td>
+                  <td>12345</td>
+                  <td>Lorem</td>
+                  <td>778-738-1128</td>
+                  <td>Employeeplan</td>
+                  <td>Lorem</td>
+                  <td>Lorem</td>
+                  <td>2024-10-10</td>
+                  <td>Lorem</td>
+                  <td>2024-10-10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Termination Table -->
+          <div class="table-section" id="termination" style="display: none">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>EFFT.Date</th>
+                  <th>Phone #</th>
+                  <th>Plan</th>
+                  <th>Reg.Time(PST)</th>
+                  <th>By</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-02</td>
+                  <td>778-788-6688</td>
+                  <td>Regular plan</td>
+                  <td>2023-10</td>
+                  <td>-</td>
+                  <td>plan changed</td>
+                </tr>
+                <tr>
+                  <td>2024-02</td>
+                  <td>778-788-6688</td>
+                  <td>15GB</td>
+                  <td>2023-10</td>
+                  <td>-</td>
+                  <td>plan changed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <!-- table  -->
@@ -164,24 +190,7 @@
 
   <script>
     //left chart
-    //chart 7
-    const ctx = document.getElementById("activityChart").getContext("2d");
-
-    const gradientActivations = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientActivations.addColorStop(0, "rgba(0, 123, 255, 0.3)");
-    gradientActivations.addColorStop(0.5, "rgba(255, 255, 255, 0.5)");
-    gradientActivations.addColorStop(1, "rgba(255, 255, 255, 1)");
-
-    const gradientSuspended = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientSuspended.addColorStop(0, "rgba(0, 56, 168, 0.3)");
-    gradientSuspended.addColorStop(0.5, "rgba(255, 255, 255, 0.5)");
-    gradientSuspended.addColorStop(1, "rgba(255, 255, 255, 1)");
-
-    const gradientTermination = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientTermination.addColorStop(0, "rgba(173, 216, 230, 0.3)");
-    gradientTermination.addColorStop(0.5, "rgba(255, 255, 255, 0.5)");
-    gradientTermination.addColorStop(1, "rgba(255, 255, 255, 1)");
-
+    const ctx = document.getElementById("summaryChart").getContext("2d");
     new Chart(ctx, {
       type: "line",
       data: {
@@ -203,37 +212,23 @@
           {
             label: "Activity",
             data: [100, 200, 150, 300, 400, 500, 250, 270, 300, 320, 350, 300],
-            borderColor: "#B3E5FC",
-            backgroundColor: gradientTermination,
-            fill: true,
-            tension: 0.3,
-            borderWidth: 1,
-            pointRadius: 0,
-            pointHoverRadius: 5,
-            pointHoverBackgroundColor: "#B3E5FC",
-          },
-          {
-            label: "Suspended",
-            data: [150, 200, 150, 200, 200, 350, 200, 150, 350, 150, 350, 200],
             borderColor: "#2887E7",
-            backgroundColor: gradientActivations,
-            fill: true,
-            tension: 0.3,
+            fill: false,
+            tension: 0,
             borderWidth: 1,
             pointRadius: 0,
-            pointHoverRadius: 5,
+            pointHoverRadius: 3,
             pointHoverBackgroundColor: "#2887E7",
           },
           {
             label: "Terminations",
             data: [150, 200, 200, 150, 350, 200, 200, 150, 350, 150, 350, 200],
             borderColor: "#00286B",
-            backgroundColor: gradientSuspended,
-            fill: true,
-            tension: 0.3,
+            fill: false,
+            tension: 0,
             borderWidth: 1,
             pointRadius: 0,
-            pointHoverRadius: 5,
+            pointHoverRadius: 3,
             pointHoverBackgroundColor: "#00286B",
           },
         ],
@@ -245,21 +240,25 @@
           mode: "nearest",
           intersect: false,
         },
+
         plugins: {
           legend: {
+            position: "right",
             display: true,
+            usePointStyle: false,
             labels: {
               font: {
                 size: 10,
               },
+              boxHeight: 1,
             },
           },
           title: {
             display: true,
-            text: "Activity",
+            text: "Summary",
             align: "start",
             font: { size: 12, weight: "bold" },
-            color: "#263238", // 添加标题颜色
+            color: "#263238",
           },
 
           tooltip: {
@@ -309,46 +308,41 @@
           },
           y: {
             ticks: {
+              stepSize: 200,
               font: {
                 size: 10,
                 family: "'Inter', sans-serif",
               },
               color: "#475467",
-              grid: {
-                color: "#F4F2F7",
-              },
+            },
+            suggestedMax: 800,
+            suggestedMin: 0,
+            grid: {
+              color: "#ECEFF1",
             },
           },
         },
       },
     });
-    //chart 8
-    const plansCtx = document.getElementById("plansChart").getContext("2d");
 
-    // 原始数据
+    //chart right
+    const Simctx = document.getElementById("SimStatusChart").getContext("2d");
+
     const data = {
-      labels: ["Plan 1", "Plan 2", "Plan 3"],
+      labels: ["Activation", "Termination"],
       datasets: [
         {
-          data: [40056, 29000, 50000], // 实际数据
-          backgroundColor: [
-            "rgba(0, 56, 168, 0.9)",
-            "rgba(0, 123, 255, 0.7)",
-            "rgba(173, 216, 230, 0.8)",
-          ],
-          borderColor: "#fff",
-          borderWidth: 2,
+          data: [160081, 40056],
+          backgroundColor: ["rgba(0, 56, 168, 0.9)", "rgba(0, 123, 255, 0.7)"],
         },
       ],
     };
 
-    // 计算总和
     const total = data.datasets[0].data.reduce((acc, value) => acc + value, 0);
 
     const customLabels = [];
 
-    // 创建饼图
-    const chart = new Chart(plansCtx, {
+    const chart = new Chart(Simctx, {
       type: "pie",
       data: data,
       options: {
@@ -356,42 +350,40 @@
         maintainAspectRatio: false,
         layout: {
           padding: {
-            top: 5, // 顶部间距
-            bottom: 20, // 底部间距，避免被遮挡
+            top: 5,
+            bottom: 10,
           },
         },
         plugins: {
           title: {
-            display: true, // 确保标题显示
-            text: "Plans", // 设置标题内容
-            align: "start", // 靠左对齐
-            position: "top", // 标题位置
+            display: true,
+            text: "SIM Status",
+            align: "start",
+            position: "top",
             font: {
-              size: 12, // 标题字体大小
-              weight: "bold", // 标题加粗
+              size: 12,
+              weight: "bold",
             },
-            color: "#263238", // 标题颜色
+            color: "#263238",
             padding: {
               top: 5,
-              left: 10, // 左边距
+              left: 10,
             },
           },
           legend: {
-            display: false, // 隐藏默认图例
+            display: false,
           },
           tooltip: {
-            enabled: false, // 禁用默认工具提示
+            enabled: false,
           },
         },
         animation: {
-          animation: false, // 禁用所有动画，包括初始化和 hover 动画
+          animation: false,
           onComplete: function () {
-            // 自定义标签
             const chartInstance = this;
             const ctx = chartInstance.ctx;
             const meta = chartInstance.getDatasetMeta(0);
 
-            // 清理上次的标签
             customLabels.forEach((label) => label.remove());
             customLabels.length = 0;
 
@@ -400,53 +392,45 @@
               const value = chartInstance.data.datasets[0].data[index];
               const percentage = ((value / total) * 100).toFixed(1);
 
-              // 创建自定义标签
               const customLabel = document.createElement("div");
               customLabel.className = "custom-label";
               customLabel.style.left = `${center.x}px`;
               customLabel.style.top = `${center.y}px`;
 
-              // 添加标题（总数）和百分比
               customLabel.innerHTML = `
-            <div style=" font-size: 10px; font-weight: bold; color: #888888;">
-              ${value.toLocaleString()}
-            </div>
-            <div style="background-color: #ECEFF1; padding: 4px; border-radius: 4px; font-size: 12px; color: #45A64; margin-top: 4px;">
-              ${percentage}%
-            </div>
-          `;
+         <div style=" font-size: 8px; font-weight: bold; color: #263236;">
+           ${value.toLocaleString()}
+         </div>
+         <div style="background-color: #ECEFF1; padding: 3px; border-radius: 4px; font-size: 9px; color: #45A64; margin-top: 3px;">
+           ${percentage}%
+         </div>
+       `;
 
-              // 添加标签到图表容器
-              plansCtx.canvas.parentNode.appendChild(customLabel);
+              Simctx.canvas.parentNode.appendChild(customLabel);
               customLabels.push(customLabel);
               meta.data.forEach((arc, index) => {
                 const label = chartInstance.data.labels[index];
                 const color =
                   chartInstance.data.datasets[0].backgroundColor[index];
 
-                // 计算扇区中心角度
                 const angle = (arc.startAngle + arc.endAngle) / 2;
 
-                // 折线开始的位置，紧贴饼图边缘
-                const radius = arc.outerRadius; // 从外边缘开始
+                const radius = arc.outerRadius;
                 const lineStart = {
                   x: arc.x + Math.cos(angle) * radius,
                   y: arc.y + Math.sin(angle) * radius,
                 };
 
-                // 折线的中点位置 (调整弯折的程度)
                 const lineMid = {
-                  x: lineStart.x + Math.cos(angle) * 10, // 调整为 20 控制折线长度
+                  x: lineStart.x + Math.cos(angle) * 10,
                   y: lineStart.y + Math.sin(angle) * 10,
                 };
 
-                // 折线的文字终点 (更短的水平延伸)
                 const textEnd = {
-                  x: lineMid.x + (angle < Math.PI ? 30 : -30), // 调整为 40 控制文字位置
+                  x: lineMid.x + (angle < Math.PI ? 30 : -30),
                   y: lineMid.y,
                 };
 
-                // 绘制折线
                 ctx.beginPath();
                 ctx.moveTo(lineStart.x, lineStart.y);
                 ctx.lineTo(lineMid.x, lineMid.y);
@@ -455,23 +439,44 @@
                 ctx.lineWidth = 1.5;
                 ctx.stroke();
 
-                // 添加文本
                 ctx.fillStyle = "#263238";
-                ctx.font = "12px sans-serif";
+                ctx.font = "10px sans-serif";
                 ctx.textAlign = angle < Math.PI ? "left" : "right";
 
-                // 调整文字与折线的距离
-                const textOffset = 6; // 减少间距
+                const textOffset = 6;
                 const textX =
                   textEnd.x + (angle < Math.PI ? textOffset : -textOffset);
                 const textY = textEnd.y;
 
-                ctx.fillText(`${label}`, textX, textY); // 只显示 Plan 标签
+                ctx.fillText(`${label}`, textX, textY);
               });
             });
           },
         },
       },
     });
+
+    // tabs
+    function showTab(tabId) {
+      const tables = document.querySelectorAll(".table-section");
+      const tabs = document.querySelectorAll(".tab-item");
+
+      tables.forEach((table) => {
+        table.style.display = "none";
+      });
+
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+      });
+
+      const selectedTable = document.getElementById(tabId);
+      if (selectedTable) {
+        selectedTable.style.display = "block";
+      }
+      const activeTab = document.querySelector(`[data-tab="${tabId}"]`);
+      if (activeTab) {
+        activeTab.classList.add("active");
+      }
+    }
   </script>
 </html>
