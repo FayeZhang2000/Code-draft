@@ -1,0 +1,263 @@
+:root {
+  --Primary: #2887e7;
+  --Secondary: #3a6bff;
+  --Dark: #05070d;
+  --text-color: #333;
+  --Light: #ffffff;
+  --Darken1: #03153F6;
+  --Darken2: #174be6;
+  --Darken3: #1442cc;
+  --Darken6: #0d2a80;
+  --Darken7: #0a2168;
+  --Darken8: #08194d;
+  --Desaturate7: #747f9b;
+  --Desaturate8: #9ba4bc;
+  --Desaturate9: #c6ccdc;
+  --Desaturate10: #f6f8fc;
+  --Brighten1: #1953ff;
+  --Brighten6: #8ca9ff;
+  --Brighten7: #a3baff;
+  --Brighten8: #bacbff;
+  --Brighten9: #d1ddff;
+  --Brighten10: #e8eeff;
+  --Border: #eceff1;
+  --blueGrey50: #eceff1;
+  --blueGrey100: #cfd8dc;
+  --blueGrey400: #78909c;
+  --blueGrey500: #607d8b;
+  --blueGrey800: #37474f;
+  --blueGrey900: #263238;
+  --green600: #43a047;
+  --red700: #d32f2f;
+}
+
+.sidebar-container {
+  position: relative;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #00286b;
+  color: var(--Light);
+  height: 100vh;
+  /*    width: 100%;*/
+  width: 230px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  transition: width 0.3s, opacity 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sidebar.collapsed {
+  width: 50px;
+  transition: width 0.3s ease;
+}
+
+.top-row {
+  height: 55px;
+  padding-left: 10px;
+  background-color: var(--Light);
+  position: relative;
+  z-index: 100;
+}
+
+.navbar-brand img {
+  height: 50px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.sm-navbar-brand img {
+  margin: 13px 10px 0 0;
+  height: 35px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+/*.sm-navbar-brand {
+    display: none;
+}*/
+#logo {
+  display: block;
+}
+
+#smlogo {
+  display: none;
+}
+
+.sidebar.collapsed .top-row {
+  background-color: #00286b;
+}
+
+.sidebar.collapsed #logo {
+  display: none;
+}
+
+.sidebar.collapsed #smlogo {
+  display: block;
+}
+
+.nav-menu {
+  margin-top: 10px;
+  flex: 1;
+  overflow-y: hidden;
+  padding-bottom: 50px;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  font-size: 14px;
+}
+
+.nav-item a {
+  color: var(--Light);
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 10px;
+  border-radius: 8px;
+}
+
+.nav-item a i {
+  margin-right: 12px;
+}
+
+.nav-item a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item a.selected {
+  background-color: var(--Darken3);
+  padding: 8px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sidebar.collapsed .menu-text {
+  display: none;
+}
+
+.sidebar.collapsed .nav-item a {
+  justify-content: center;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.sidebar.collapsed .nav-item a i {
+  margin-right: 0;
+}
+
+.sidebar.collapsed .nav-item a.selected {
+  background-color: var(--Darken3);
+  padding: 8px 0;
+  margin: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.sidebar.collapsed .nav-item a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 0;
+  margin: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.sub-menu {
+  display: none;
+  padding: 0 0 0 40px;
+}
+
+.sub-menu li a {
+  font-size: 14px;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.sub-menu li a::before {
+  content: "";
+  width: 1.5rem;
+  display: inline-block;
+}
+
+.help-support {
+  position: absolute;
+  bottom: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #00286b;
+}
+
+.help-support a {
+  color: var(--Light);
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+}
+
+.help-support i {
+  margin-right: 5px;
+}
+
+.menu-toggle_btn {
+  color: #00286b;
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 230px;
+  z-index: 5000;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+#toggle-btn-left {
+  display: block;
+}
+
+#toggle-btn-right {
+  display: none;
+}
+
+.sidebar.collapsed ~ .menu-toggle_btn {
+  left: 55px;
+}
+
+.sidebar.collapsed #toggle-btn-left {
+  display: none !important;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed #toggle-btn-right {
+  display: block !important;
+  transition: all 0.3s ease;
+}
+
+button.toggle-btn {
+  all: unset;
+  cursor: pointer;
+}
+
+.menu-text {
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
