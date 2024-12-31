@@ -13,6 +13,8 @@
 
   <body>
     <div class="sidebar-container">
+      <div id="global-tooltip" class="tooltip">Tooltip Text</div>
+
       <div class="sidebar collapsed">
         <div class="top-row">
           <a class="navbar-brand" id="logo" href="#" style="display: none">
@@ -30,10 +32,11 @@
         <nav class="nav-menu">
           <ul>
             <!-- Dashboard -->
-            <li class="nav-item has-children">
-              <a href="/" onclick="toggleMenu('dashboardMenu')">
+            <li class="nav-item has-children" data-tooltip="Dashboard">
+              <a href="#" onclick="toggleMenu('dashboardMenu')">
                 <i class="bi bi-grid"></i>
-                <span class="menu-text">Dashboard</span>
+                <span class="menu-text">Dashboard</span
+                ><i class="bi bi-chevron-down arrow-icon"></i>
               </a>
               <ul class="sub-menu" id="dashboardMenu">
                 <li>
@@ -46,11 +49,16 @@
             </li>
 
             <!-- Customer Management -->
-            <li class="nav-item has-children">
+            <li
+              class="nav-item has-children"
+              data-tooltip="Customer Management"
+            >
               <a onclick="toggleMenu('customerMenu')">
-                <i class="bi bi-people"></i>
+                <i class="bi bi-person-check"></i>
                 <span class="menu-text">Customer Management</span>
+                <i class="bi bi-chevron-down arrow-icon"></i>
               </a>
+              <div class="tooltip">Customer Management</div>
               <ul class="sub-menu" id="customerMenu">
                 <li>
                   <a href="prepaidactivation"
@@ -71,8 +79,9 @@
             <!-- Plan Management -->
             <li class="nav-item has-children">
               <a onclick="toggleMenu('PlanMenu')">
-                <i class="bi bi-box-seam"></i>
-                <span class="menu-text">Plan Managegment</span>
+                <i class="bi bi-kanban"></i>
+                <span class="menu-text">Plan Managegment</span
+                ><i class="bi bi-chevron-down arrow-icon"></i>
               </a>
               <ul class="sub-menu" id="PlanMenu">
                 <li>
@@ -89,139 +98,22 @@
                 </li>
               </ul>
             </li>
-            <!-- Independent Sections -->
-            <li class="nav-item has-children">
-              <a onclick="toggleMenu('PaymentMenu')"
-                ><i class="bi bi-currency-dollar"></i>
-                <span class="menu-text">Payment & Invoices</span></a
-              >
-              <ul class="sub-menu" id="PaymentMenu">
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Payment</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Invoice management(CDR)</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Accounting</span></a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item has-children">
-              <a onclick="toggleMenu('MarketingMenu')"
-                ><i class="bi bi-megaphone"></i
-                ><span class="menu-text">Marketing & Sales</span></a
-              >
-              <ul class="sub-menu" id="MarketingMenu">
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Sales</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Marketing</span></a
-                  >
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item has-children">
-              <a onclick="toggleMenu('ReportMenu')">
-                <i class="bi bi-bar-chart"></i>
-                <span class="menu-text">Reports & Analytics</span>
-              </a>
-              <ul class="sub-menu" id="ReportMenu">
-                <li>
-                  <a href="report"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Reports</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Closing Reports</span></a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item has-children">
-              <a onclick="toggleMenu('HRMenu')"
-                ><i class="bi bi-people-fill"></i>
-                <span class="menu-text">HR</span></a
-              >
-              <ul class="sub-menu" id="HRMenu">
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">New Employee</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Employee Details</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Access Level</span></a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><div class="icon-placeholder"></div>
-                    <span class="menu-text">Checklist & Onboarding</span></a
-                  >
-                </li>
-              </ul>
-            </li>
-            <hr />
-
-            <!-- Settings & Log out -->
-            <li class="nav-item">
-              <a href="#"
-                ><i class="bi bi-gear"></i>
-                <span class="menu-text">Settings</span></a
-              >
-            </li>
-
-            <!-- Logout -->
-
-            <li class="help-support">
-              <a href="#">
-                <i class="bi bi-question-circle"></i>
-                <span class="menu-text">Help & Support</span>
-              </a>
-            </li>
           </ul>
         </nav>
       </div>
       <div class="menu-toggle_btn">
         <button class="toggle-btn" id="toggle-btn-left" style="display: none">
-          <i class="bi bi-chevron-bar-left"></i>
+          <i class="bi bi-list"></i>
         </button>
         <button class="toggle-btn" id="toggle-btn-right" style="display: block">
-          <i class="bi bi-chevron-bar-right"></i>
+          <i class="bi bi-list"></i>
         </button>
       </div>
     </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        //sidebar:
         const sidebar = document.querySelector(".sidebar");
         const logo = document.getElementById("logo");
         const smlogo = document.getElementById("smlogo");
@@ -239,7 +131,7 @@
           menu.style.display = "none";
         });
 
-        smlogo.addEventListener("hover", () => {
+        smlogo.addEventListener("click", () => {
           if (sidebar.classList.contains("collapsed")) {
             sidebar.classList.remove("collapsed");
             logo.style.display = "block";
@@ -331,6 +223,32 @@
             menu.style.display = "none";
           });
         }
+      });
+
+      //tooltips control:
+      document.addEventListener("DOMContentLoaded", () => {
+        const tooltip = document.getElementById("global-tooltip");
+
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          item.addEventListener("mouseenter", (e) => {
+            const text = item.getAttribute("data-tooltip");
+            if (text) {
+              tooltip.textContent = text;
+
+              const rect = item.getBoundingClientRect();
+
+              tooltip.style.top = `${rect.top + window.scrollY}px`;
+              tooltip.style.left = `${rect.right + 10}px`;
+              tooltip.style.opacity = 1;
+              tooltip.style.visibility = "visible";
+            }
+          });
+
+          item.addEventListener("mouseleave", () => {
+            tooltip.style.opacity = 0;
+            tooltip.style.visibility = "hidden";
+          });
+        });
       });
     </script>
   </body>

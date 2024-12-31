@@ -34,7 +34,7 @@
 .sidebar-container {
   position: relative;
   height: 100%;
-  transition: all 0.3s ease;
+  /*    transition: all 0.3s ease;*/
 }
 
 .sidebar {
@@ -43,20 +43,22 @@
   background-color: #00286b;
   color: var(--Light);
   height: 100vh;
-  /*    width: 100%;*/
   width: 230px;
-  overflow: hidden;
+
+  overflow: visible;
   flex-shrink: 0;
   box-sizing: border-box;
   padding-bottom: 20px;
-  transition: width 0.3s, opacity 0.2s ease;
+  /*    transition: width 0.3s, opacity 0.2s ease;*/
   white-space: nowrap;
   position: relative;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .sidebar.collapsed {
-  width: 50px;
-  transition: width 0.3s ease;
+  width: 55px;
+  /*        transition: width 0.3s ease;*/
 }
 
 .top-row {
@@ -73,14 +75,11 @@
 }
 
 .sm-navbar-brand img {
-  margin: 13px 10px 0 0;
-  height: 35px;
+  margin: 13px 10px 0 2px;
+  height: 32px;
   transition: width 0.3s ease, opacity 0.3s ease;
 }
 
-/*.sm-navbar-brand {
-    display: none;
-}*/
 #logo {
   display: block;
 }
@@ -89,10 +88,10 @@
   display: none;
 }
 
-.sidebar.collapsed .top-row {
-  background-color: #00286b;
+/*.sidebar.collapsed .top-row {
+    background-color: #00286b;
 }
-
+*/
 .sidebar.collapsed #logo {
   display: none;
 }
@@ -104,7 +103,7 @@
 .nav-menu {
   margin-top: 10px;
   flex: 1;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   padding-bottom: 50px;
 }
 
@@ -114,23 +113,19 @@
   margin: 0;
 }
 
-.nav-item {
-  font-size: 14px;
-}
-
 .nav-item a {
   color: var(--Light);
   text-decoration: none;
-  padding: 8px;
   display: flex;
   align-items: center;
-  font-weight: bold;
-  margin: 0 10px;
+  margin: 0 20px 0 11px;
+  padding: 8px 10px;
   border-radius: 8px;
-}
-
-.nav-item a i {
-  margin-right: 12px;
+  justify-content: flex-start;
+  position: relative;
+  width: 92%;
+  height: 35px;
+  box-sizing: border-box;
 }
 
 .nav-item a:hover {
@@ -140,7 +135,6 @@
 .nav-item a.selected {
   background-color: var(--Darken3);
   padding: 8px;
-  margin: 0 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -150,68 +144,41 @@
   display: none;
 }
 
-.sidebar.collapsed .nav-item a {
+.sidebar.collapsed .nav-item > a {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 8px 0;
-  margin: 0;
+  width: 35px;
+  height: 35px;
+  box-sizing: border-box;
+  font-size: 13px;
+  margin: 0 20px 0 10px;
+  padding: 8px 10px;
 }
 
-.sidebar.collapsed .nav-item a i {
-  margin-right: 0;
+.sidebar.collapsed .nav-item > a.selected,
+.sidebar.collapsed .nav-item > a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 35px;
+  height: 35px;
+  box-sizing: border-box;
 }
 
 .sidebar.collapsed .nav-item a.selected {
   background-color: var(--Darken3);
-  padding: 8px 0;
-  margin: 0 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.sidebar.collapsed .nav-item a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 8px 0;
-  margin: 0 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.sub-menu {
-  display: none;
-  padding: 0 0 0 40px;
-}
-
-.sub-menu li a {
-  font-size: 14px;
-  font-weight: normal;
-  display: flex;
-  align-items: center;
-}
-
-.sub-menu li a::before {
-  content: "";
-  width: 1.5rem;
-  display: inline-block;
 }
 
 .help-support {
   position: absolute;
   bottom: 5px;
   padding: 10px 20px;
-  font-size: 14px;
   background-color: #00286b;
 }
 
 .help-support a {
   color: var(--Light);
   text-decoration: none;
-  font-size: 14px;
   display: flex;
 }
 
@@ -225,33 +192,33 @@
   cursor: pointer;
   position: fixed;
   top: 10px;
-  left: 230px;
+  left: 235px;
   z-index: 5000;
   transform: translateX(0);
   transition: transform 0.3s ease;
 }
 
-#toggle-btn-left {
+/* #toggle-btn-left {
   display: block;
-}
+} */
 
-#toggle-btn-right {
+/* #toggle-btn-right {
   display: none;
-}
+} */
 
 .sidebar.collapsed ~ .menu-toggle_btn {
-  left: 55px;
+  left: 60px;
 }
 
-.sidebar.collapsed #toggle-btn-left {
+/* .sidebar.collapsed #toggle-btn-left {
   display: none !important;
   transition: all 0.3s ease;
-}
+} */
 
-.sidebar.collapsed #toggle-btn-right {
+/* .sidebar.collapsed #toggle-btn-right {
   display: block !important;
   transition: all 0.3s ease;
-}
+} */
 
 button.toggle-btn {
   all: unset;
@@ -260,4 +227,137 @@ button.toggle-btn {
 
 .menu-text {
   transition: width 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.sidebar.collapsed .arrow-icon {
+  display: none;
+}
+
+.arrow-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-item:hover .arrow-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 悬浮子菜单样式 */
+.hover-submenu {
+  position: absolute;
+  left: 100%;
+  top: 40%;
+  box-sizing: border-box; /* 确保padding不超出容器 */
+  margin-left: 5px;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  background-color: #00286b;
+  width: 180px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  pointer-events: none; /* 默认不接收鼠标事件 */
+  padding: 0; /* 取消多余的padding，单独处理内部元素 */
+}
+
+.hover-submenu ul {
+  list-style-type: none;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* 子菜单项之间的间距 */
+  padding: 0; /* 移除默认的padding，使列表项和标题对齐 */
+}
+
+.hover-submenu li a {
+  display: block;
+  padding: 10px; /* 增加padding替代margin */
+  color: white;
+  text-decoration: none;
+  box-sizing: border-box; /* 确保内边距不溢出 */
+  overflow: hidden;
+  white-space: nowrap; /* 防止文字换行 */
+  text-align: left; /* 保证文本左对齐 */
+  font-weight: normal;
+}
+
+.hover-submenu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  max-width: 157px;
+}
+
+.submenu-header {
+  font-weight: bold;
+  padding: 10px 22px;
+  background-color: #00286b;
+  display: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+}
+
+/* 仅在collapsed状态下显示submenu-header */
+.sidebar.collapsed .hover-submenu .submenu-header {
+  display: block;
+}
+
+.nav-item:hover .hover-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-60%) translateX(0);
+  pointer-events: auto; /* 鼠标悬停时接收事件 */
+}
+.sidebar.collapsed .hover-submenu li a {
+  padding: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  max-width: 170px;
+}
+.sidebar.collapsed .hover-submenu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  max-width: 157px;
+}
+
+.hover-submenu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  width: 15px;
+  height: calc(100% + 20px); /* 创建缓冲区 */
+  background: transparent;
+  z-index: -1;
+}
+.nav-item {
+  position: relative;
+}
+
+.tooltip {
+  position: fixed;
+  top: 0; /* 初始隐藏位置 */
+  left: 0; /* 初始隐藏位置 */
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 99999;
 }

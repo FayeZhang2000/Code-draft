@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dropdown</title>
+    <style>
+      /* Dropdown */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        z-index: 5000;
+      }
+      /*.dropdown-checkbox {
+    display: none;
+}
+*/
+      .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border: 1px solid greenyellow;
+        border-radius: 5px;
+        padding: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .dropdown-toggle:hover {
+        background-color: ghostwhite;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border: 1px solid gray;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        list-style: none;
+        padding: 0;
+        z-index: 7000;
+        display: flex;
+        flex-direction: column;
+        display: none;
+        text-align: left;
+        min-width: min-content;
+      }
+
+      .dropdown-menu li {
+        padding: 8px !important;
+        white-space: nowrap !important;
+        text-align: left !important;
+        overflow: hidden;
+        line-height: 0.5;
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+      }
+
+      .dropdown-menu li:hover {
+        color: blue;
+      }
+
+      .dropdown:focus-within .dropdown-menu {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="action">
+      <div class="dropdown">
+        <input
+          type="checkbox"
+          id="dropdownToggleLeft"
+          class="dropdown-checkbox"
+        />
+        <label for="dropdownToggleLeft" class="dropdown-toggle">
+          <i class="bi bi-file-earmark-bar-graph"></i> Ticket Report
+        </label>
+        <ul class="dropdown-menu">
+          <li onclick="window.location.href='/report';">Ticket Report</li>
+          <li onclick="window.location.href='/report_Activation';">
+            Activation & Termination
+          </li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <input
+          type="checkbox"
+          id="dropdownToggleRight"
+          class="dropdown-checkbox"
+        />
+        <label for="dropdownToggleRight" class="dropdown-toggle">
+          <i class="bi bi-file-earmark-arrow-down"></i> Export
+        </label>
+        <ul class="dropdown-menu">
+          <li onclick="$('.copy-btn').click();">Export to Clipboard</li>
+          <li onclick="$('.excel-btn').click();">Export to Excel</li>
+          <li onclick="$('.csv-btn').click();">Export to CSV</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
